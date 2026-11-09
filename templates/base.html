@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Núcleos Cariocas{% endblock %}</title>
+
+    <!-- Fontes (se estiver sem internet, o navegador usa uma fonte do sistema) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- O Flask serve tudo que está na pasta static/ -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Menu: aparece em TODAS as páginas, porque elas herdam deste arquivo -->
+    <header class="topo">
+        <nav>
+            <a class="marca" href="{{ url_for('index') }}">Núcleos Cariocas</a>
+
+            <ul>
+                {% for rotulo, rota, prefixo in [
+                    ("Turmas", "lista_de_turmas", "/turma"),
+                    ("Alunos", "lista_de_alunos", "/aluno"),
+                    ("Professores", "lista_de_professores", "/professor"),
+                    ("Aulas", "lista_de_aulas", "/aulas"),
+                    ("Avisos", "lista_de_avisos", "/avisos"),
+                    ("Presenças", "lista_de_presencas", "/presencas")
+                ] %}
+                <li><a href="{{ url_for(rota) }}"{% if request.path.startswith(prefixo) %} class="active" aria-current="page"{% endif %}>{{ rotulo }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <a href="#" class="botaoEntrar">Entrar</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer class="rodape">
+        <p>Núcleos Cariocas, academia solidária.</p>
+    </footer>
+</body>
+</html>

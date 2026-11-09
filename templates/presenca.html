@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %}Presença - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Informações da presença</h1>
+
+    <p>Aluno(a) (Cpf): {{ presenca.cpfAluno }}</p>
+    <p>Aula: {{ presenca.idAula }}</p>
+    <p>Status: {{ presenca.status }}</p>
+    <p>Validada por (Cpf): {{ presenca.cpfProfessorValidador or 'Ainda não validada' }}</p>
+
+    <a class="botao" href="{{ url_for('editar_presenca', id_presenca=presenca.idPresenca) }}">
+        Validar / Alterar Dados
+    </a>
+</section>
+{% endblock %}

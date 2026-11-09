@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block titulo %}Atualizar professor - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Atualizar Professor</h1>
+
+    <form action="{{ url_for('editar_professor', cpf=professor.cpf) }}" method="POST">
+        <label for="cpf">Cpf:</label>
+        <input type="text" id="cpf" name="cpf" required value="{{ professor.cpf }}" readonly>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required value="{{ professor.nome }}">
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" value="{{ professor.telefone }}">
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" value="{{ professor.endereco }}">
+
+        <label for="cref">Cref:</label>
+        <input type="text" id="cref" name="cref" value="{{ professor.cref }}">
+
+        <button type="submit">Atualizar</button>
+
+    </form>
+
+    <form 
+    action="{{ url_for('excluir_professor', cpf=professor.cpf) }}" 
+    method="POST"
+    class="form-excluir"
+        onsubmit="return confirm('Tem certeza que deseja excluir este Professor(a)?');">
+        <button type="submit">Excluir</button>
+    </form>
+</section>
+{% endblock %}

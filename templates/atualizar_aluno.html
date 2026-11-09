@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block titulo %}Atualizar Aluno - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Atualizar Aluno</h1>
+
+    <form action="{{ url_for('editar_aluno', cpf=aluno.cpf) }}" method="POST">
+        <label for="cpf">Cpf:</label>
+        <input type="text" id="cpf" name="cpf" required value="{{ aluno.cpf }}" readonly>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required value="{{ aluno.nome }}">
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" value="{{ aluno.telefone }}">
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" value="{{ aluno.endereco }}">
+
+        <label for="nascimento">Data de nascimento:</label>
+        <input type="text" id="nascimento" name="nascimento" value="{{ aluno.nascimento }}">
+
+        <label for="peso">Peso:</label>
+        <input type="text" id="peso" name="peso" value="{{ aluno.peso }}">
+
+        <label for="altura">Altura:</label>
+        <input type="text" id="altura" name="altura" value="{{ aluno.altura }}">
+
+        <label for="sexo">Sexo:</label>
+        <input type="text" id="sexo" name="sexo" value="{{ aluno.sexo }}">
+
+        <label for="idTurma">Turma:</label>
+        <input type="text" id="idTurma" name="idTurma" value="{{ aluno.idTurma }}">
+
+        <button type="submit">Atualizar</button>
+
+    </form>
+
+    <form 
+    action="{{ url_for('excluir_aluno', cpf=aluno.cpf) }}" 
+    method="POST"
+    class="form-excluir"
+        onsubmit="return confirm('Tem certeza que deseja excluir este aluno(a)?');">
+        <button type="submit">Excluir</button>
+    </form>
+</section>
+{% endblock %}

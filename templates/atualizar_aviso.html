@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block titulo %}Atualizar aviso - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Atualizar aviso</h1>
+
+    <form action="{{ url_for('editar_aviso', id_aviso=aviso.idAviso) }}" method="POST">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required value="{{ aviso.titulo }}">
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" required value="{{ aviso.descricao }}">
+
+        <label for="idTurma">Turma (código):</label>
+        <input type="text" id="idTurma" name="idTurma" required value="{{ aviso.idTurma }}">
+
+        <label for="cpfProfessor">Cpf do(a) professor(a):</label>
+        <input type="text" id="cpfProfessor" name="cpfProfessor" value="{{ aviso.cpfProfessor }}" readonly>
+
+        <button type="submit">Atualizar</button>
+
+    </form>
+
+    <form
+    action="{{ url_for('excluir_aviso', id_aviso=aviso.idAviso) }}"
+    method="POST"
+    class="form-excluir"
+        onsubmit="return confirm('Tem certeza que deseja excluir este aviso?');">
+        <button type="submit">Excluir</button>
+    </form>
+</section>
+{% endblock %}

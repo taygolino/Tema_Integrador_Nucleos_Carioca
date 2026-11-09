@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}Núcleos Cariocas - Academia solidária{% endblock %}
+
+{% block conteudo %}
+<section class="hero">
+    <h1>Núcleos Cariocas</h1>
+    <p>Academia solidária: turmas, aulas e presença num só lugar.</p>
+</section>
+
+<!-- Um card por área do site. Para criar um novo, é só acrescentar uma linha na lista abaixo -->
+<section class="atalhos">
+    {% for titulo, descricao, rota_lista, rota_cadastro, acao in [
+        ("Turmas", "Crie e organize os grupos de treino.", "lista_de_turmas", "cadastrar_turma", "Cadastrar"),
+        ("Alunos", "Cadastre quem treina e acompanhe os dados.", "lista_de_alunos", "cadastrar_aluno", "Cadastrar"),
+        ("Professores", "Cadastre e consulte quem dá as aulas.", "lista_de_professores", "cadastrar_professor", "Cadastrar"),
+        ("Aulas", "Marque as aulas de cada turma.", "lista_de_aulas", "cadastrar_aula", "Cadastrar"),
+        ("Avisos", "Deixe recados para as turmas.", "lista_de_avisos", "cadastrar_aviso", "Publicar"),
+        ("Presenças", "Registre e valide quem esteve na aula.", "lista_de_presencas", "cadastrar_presenca", "Registrar")
+    ] %}
+    <article class="atalho">
+        <h2>{{ titulo }}</h2>
+        <p>{{ descricao }}</p>
+        <div class="acoes">
+            <a class="botao" href="{{ url_for(rota_lista) }}">Ver lista</a>
+            <a class="botao botao-secundario" href="{{ url_for(rota_cadastro) }}">{{ acao }}</a>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

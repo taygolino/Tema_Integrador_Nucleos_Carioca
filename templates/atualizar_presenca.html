@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulo %}Validar presença - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Validar presença</h1>
+
+    <form action="{{ url_for('editar_presenca', id_presenca=presenca.idPresenca) }}" method="POST">
+        <label for="cpfAluno">Cpf do(a) aluno(a):</label>
+        <input type="text" id="cpfAluno" name="cpfAluno" value="{{ presenca.cpfAluno }}" readonly>
+
+        <label for="idAula">Aula (código):</label>
+        <input type="text" id="idAula" name="idAula" value="{{ presenca.idAula }}" readonly>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="PENDENTE" {% if presenca.status == 'PENDENTE' %}selected{% endif %}>Pendente</option>
+            <option value="VALIDADA" {% if presenca.status == 'VALIDADA' %}selected{% endif %}>Validada</option>
+            <option value="RECUSADA" {% if presenca.status == 'RECUSADA' %}selected{% endif %}>Recusada</option>
+        </select>
+
+        <label for="cpfProfessorValidador">Cpf do(a) professor(a) validador(a):</label>
+        <input type="text" id="cpfProfessorValidador" name="cpfProfessorValidador" value="{{ presenca.cpfProfessorValidador or '' }}">
+
+        <button type="submit">Atualizar</button>
+
+    </form>
+
+    <form
+    action="{{ url_for('excluir_presenca', id_presenca=presenca.idPresenca) }}"
+    method="POST"
+    class="form-excluir"
+        onsubmit="return confirm('Tem certeza que deseja excluir esta presença?');">
+        <button type="submit">Excluir</button>
+    </form>
+</section>
+{% endblock %}

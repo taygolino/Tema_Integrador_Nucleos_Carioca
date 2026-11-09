@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block titulo %}Professor - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Informações do(a) Professor(a)</h1>
+
+    <h3>Cpf: {{ professor.cpf }}</h3>
+    <p>Nome: {{ professor.nome }}</p>
+    <p>Telefone: {{ professor.telefone }}</p>
+    <p>Endereco: {{ professor.endereco }}</p>
+    <p>Cref: {{ professor.cref }}</p>
+
+    <a class="botao" href="{{ url_for('editar_professor', cpf=professor.cpf) }}">
+        Alterar Dados
+    </a>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block titulo %}Atualizar aula - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Atualizar aula</h1>
+
+    <form action="{{ url_for('editar_aula', id_aula=aula.idAula) }}" method="POST">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required value="{{ aula.data }}">
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required value="{{ aula.hora }}">
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ aula.descricao or '' }}">
+
+        <label for="idTurma">Turma (código):</label>
+        <input type="text" id="idTurma" name="idTurma" required value="{{ aula.idTurma }}">
+
+        <button type="submit">Atualizar</button>
+
+    </form>
+
+    <form
+    action="{{ url_for('excluir_aula', id_aula=aula.idAula) }}"
+    method="POST"
+    class="form-excluir"
+        onsubmit="return confirm('Tem certeza que deseja excluir esta aula?');">
+        <button type="submit">Excluir</button>
+    </form>
+</section>
+{% endblock %}

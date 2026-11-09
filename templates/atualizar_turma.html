@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block titulo %}Atualizar turmas - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Atualizar turma</h1>
+
+    <form action="{{ url_for('editar_turma', id_turma=turma.idTurma) }}" method="POST">
+        <label for="nome">Nome da turma:</label>
+        <input type="text" id="nome" name="nome" required value="{{ turma.nome }}">
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ turma.descricao }}">
+
+        <button type="submit">Atualizar</button>
+
+    </form>
+
+    <form 
+    action="{{ url_for('excluir_turma', id_turma=turma.idTurma) }}" 
+    method="POST"
+    class="form-excluir"
+        onsubmit="return confirm('Tem certeza que deseja excluir esta turma?');">
+        <button type="submit">Excluir</button>
+    </form>
+</section>
+{% endblock %}

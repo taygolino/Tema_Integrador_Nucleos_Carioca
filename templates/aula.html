@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %}Aula - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Informações da aula</h1>
+
+    <p>Data: {{ aula.data }}</p>
+    <p>Hora: {{ aula.hora }}</p>
+    <p>Descrição: {{ aula.descricao or '' }}</p>
+    <p>Turma: {{ aula.idTurma }}</p>
+
+    <a class="botao" href="{{ url_for('editar_aula', id_aula=aula.idAula) }}">
+        Alterar Dados
+    </a>
+</section>
+{% endblock %}

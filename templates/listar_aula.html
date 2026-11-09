@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listar aulas - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Aulas cadastradas</h1>
+
+    <div class="tabela-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Turma</th>
+                <th scope="col">Detalhes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aula in aulas %}
+            <tr>
+                <td>{{ aula[1] }}</td>
+                <td>{{ aula[2] }}</td>
+                <td>{{ aula[3] or '' }}</td>
+                <td>{{ aula[4] }}</td>
+                <td><a href="{{ url_for('visualizar_aula', id_aula=aula[0]) }}">Visualizar</a></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">Nenhuma aula cadastrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</section>
+{% endblock %}

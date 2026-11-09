@@ -1,0 +1,303 @@
+/* ==========================================================
+   Núcleos Cariocas - estilo geral
+   Dica: para trocar as cores do site inteiro, mexa só aqui em :root
+   ========================================================== */
+:root {
+  --cor-primaria: #f0e10d;      /* amarelo do projeto */
+  --cor-secundaria: #ffffff;
+  --cor-fundo: #efefeb;
+  --cor-menu: #2b2b2b;
+  --cor-hover: #f6f3a8;         /* amarelo bem clarinho */
+  --cor-texto: #1f1f1f;
+  --cor-suave: #6b6b66;         /* textos secundários */
+  --cor-borda: #dcdcd5;
+  --cor-perigo: #b3261e;        /* botão de excluir */
+
+  --raio: 14px;
+  --fonte-titulo: "Baloo 2", "Nunito", system-ui, sans-serif;
+  --fonte-texto: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.15;
+}
+
+a {
+  color: var(--cor-texto);
+  text-decoration-color: var(--cor-primaria);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+a:hover { background-color: var(--cor-primaria); }
+
+/* Foco visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--cor-texto);
+  outline-offset: 3px;
+}
+
+/* ---------- Menu ---------- */
+.topo {
+  background-color: var(--cor-secundaria);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.topo nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.8rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.marca {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-decoration: none;
+  background-color: var(--cor-primaria);
+  padding: 0 0.7rem;
+  border-radius: 10px;
+}
+.marca:hover { background-color: var(--cor-primaria); }
+
+.topo ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.topo ul a {
+  display: block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.topo ul a:hover { background-color: var(--cor-hover); }
+.topo ul a.active { background-color: var(--cor-primaria); }
+
+.botaoEntrar {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  background-color: var(--cor-menu);
+  color: var(--cor-primaria);
+}
+.botaoEntrar:hover {
+  background-color: var(--cor-texto);
+}
+
+/* ---------- Estrutura da página ---------- */
+.conteudo {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.rodape {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+  color: var(--cor-suave);
+  font-size: 0.9rem;
+}
+.rodape p { margin: 0; }
+
+/* Cartão branco que envolve o conteúdo das páginas internas */
+.cartao {
+  background-color: var(--cor-secundaria);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 2rem;
+}
+.cartao h1 {
+  margin: 0 0 1.25rem;
+  font-size: 2rem;
+}
+.cartao h3 { margin: 1rem 0 0.25rem; }
+.cartao p { margin: 0.35rem 0; }
+
+/* ---------- Página inicial ---------- */
+.hero {
+  background-color: var(--cor-primaria);
+  border-radius: 24px;
+  padding: 3.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.6rem, 9vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  max-width: 32ch;
+}
+
+.atalhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.atalho {
+  background-color: var(--cor-secundaria);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.atalho h2 { margin: 0; font-size: 1.6rem; }
+.atalho p { margin: 0.25rem 0 1.25rem; color: var(--cor-suave); flex: 1; }
+.atalho .acoes { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* ---------- Botões ---------- */
+button,
+.botao {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  color: var(--cor-texto);
+  background-color: var(--cor-primaria);
+  border: 2px solid var(--cor-texto);
+  border-radius: 999px;
+  padding: 0.45rem 1.3rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+button:hover,
+.botao:hover {
+  background-color: var(--cor-menu);
+  color: var(--cor-primaria);
+}
+
+.botao-secundario { background-color: var(--cor-secundaria); }
+
+/* Link "Alterar Dados" das páginas de detalhe */
+.cartao > .botao { margin-top: 1.25rem; }
+
+/* ---------- Formulários ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+}
+
+label {
+  font-weight: 700;
+  margin: 1rem 0 0.3rem;
+}
+
+input,
+select {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  background-color: var(--cor-secundaria);
+  border: 1.5px solid var(--cor-borda);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+input:focus,
+select:focus {
+  border-color: var(--cor-texto);
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 0;
+}
+input[readonly] {
+  background-color: var(--cor-fundo);
+  color: var(--cor-suave);
+}
+
+form button {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+}
+
+/* Formulário de excluir (fica separado, embaixo) */
+.form-excluir {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cor-borda);
+}
+.form-excluir button {
+  margin-top: 0;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-perigo);
+  border-color: var(--cor-perigo);
+}
+.form-excluir button:hover {
+  background-color: var(--cor-perigo);
+  color: var(--cor-secundaria);
+}
+
+/* ---------- Tabelas ---------- */
+.tabela-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  background-color: var(--cor-menu);
+  color: var(--cor-secundaria);
+  padding: 0.7rem 0.9rem;
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.7rem 0.9rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+tbody tr:first-child td { border-top: none; }
+tbody tr:hover { background-color: #fbfae8; }
+td a { font-weight: 700; }
+
+/* Linha "Nenhum registro cadastrado" */
+td[colspan] {
+  text-align: center;
+  color: var(--cor-suave);
+  padding: 1.75rem;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .hero { padding: 2.25rem 1.25rem; border-radius: 18px; }
+  .cartao { padding: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

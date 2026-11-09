@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %}Aluno - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Informações do(a) Aluno(a)</h1>
+
+    <h3>Cpf: {{ aluno.cpf }}</h3>
+    <p>Nome: {{ aluno.nome }}</p>
+    <p>Telefone: {{ aluno.telefone }}</p>
+    <p>Endereco: {{ aluno.endereco }}</p>
+    <p>Nascimento: {{ aluno.nascimento }}</p>
+    <p>Peso: {{ aluno.peso }}</p>
+    <p>Altura: {{ aluno.altura }}</p>
+    <p>Sexo: {{ aluno.sexo }}</p>
+    <p>Turma: {{ aluno.idTurma }}</p>
+
+    <a class="botao" href="{{ url_for('editar_aluno', cpf=aluno.cpf) }}">
+        Alterar Dados
+    </a>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titulo %}Publicar aviso - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Publicar aviso</h1>
+
+    <form action="{{ url_for('cadastrar_aviso') }}" method="POST">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" required>
+
+        <label for="idTurma">Turma (código):</label>
+        <input type="text" id="idTurma" name="idTurma" required>
+
+        <label for="cpfProfessor">Cpf do(a) professor(a):</label>
+        <input type="text" id="cpfProfessor" name="cpfProfessor" required>
+
+        <button type="submit">Publicar</button>
+    </form>
+</section>
+{% endblock %}

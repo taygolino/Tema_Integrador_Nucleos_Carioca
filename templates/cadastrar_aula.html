@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titulo %}Cadastrar aulas - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Cadastrar aula</h1>
+
+    <form action="{{ url_for('cadastrar_aula') }}" method="POST">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao">
+
+        <label for="idTurma">Turma (código):</label>
+        <input type="text" id="idTurma" name="idTurma" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</section>
+{% endblock %}

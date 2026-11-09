@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block titulo %}Turma - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Informações da turma</h1>
+
+    <p>Nome: {{ turma.nome }}</p>
+    <p>Descrição: {{ turma.descricao }}</p>
+
+    <a class="botao" href="{{ url_for('editar_turma', id_turma=turma.idTurma) }}">
+        Alterar Dados
+    </a>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listar presenças - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Presenças registradas</h1>
+
+    <div class="tabela-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Aluno(a)</th>
+                <th scope="col">Data da aula</th>
+                <th scope="col">Aula</th>
+                <th scope="col">Status</th>
+                <th scope="col">Detalhes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for presenca in presencas %}
+            <tr>
+                <td>{{ presenca[1] }}</td>
+                <td>{{ presenca[2] }}</td>
+                <td>{{ presenca[3] or '' }}</td>
+                <td>{{ presenca[4] }}</td>
+                <td><a href="{{ url_for('visualizar_presenca', id_presenca=presenca[0]) }}">Visualizar</a></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">Nenhuma presença registrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</section>
+{% endblock %}

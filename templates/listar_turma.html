@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listar turmas - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Turmas cadastradas</h1>
+
+    <div class="tabela-wrap">
+    <table> <!-- Tabelinha pra exibição ficar bonita -->
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Visualizar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for turma in turmas %}
+            <tr>
+                <td>{{ turma[1] }}</td>
+                <td>{{ turma[2] }}</td>
+                <td><a href="{{ url_for('visualizar_turma', id_turma=turma[0]) }}">Aqui</a></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="3">Nenhuma turma cadastrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</section>
+{% endblock %}

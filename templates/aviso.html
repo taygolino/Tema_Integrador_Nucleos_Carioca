@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block titulo %}Aviso - Núcleos Cariocas{% endblock %}
+
+{% block conteudo %}
+<section class="cartao">
+    <h1>Informações do aviso</h1>
+
+    <h3>{{ aviso.titulo }}</h3>
+    <p>Descrição: {{ aviso.descricao }}</p>
+    <p>Publicado em: {{ aviso.dataPublicacao }}</p>
+    <p>Turma: {{ aviso.idTurma }}</p>
+    <p>Professor(a) (Cpf): {{ aviso.cpfProfessor }}</p>
+
+    <a class="botao" href="{{ url_for('editar_aviso', id_aviso=aviso.idAviso) }}">
+        Alterar Dados
+    </a>
+</section>
+{% endblock %}
