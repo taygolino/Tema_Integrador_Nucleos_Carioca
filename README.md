@@ -1,10 +1,20 @@
 # Tema Integrador - Núcleos Cariocas
 Trabalho de extensão do curso de Ciência da Computação (EAD), com foco na documentação, modelagem e implementação básica de um banco de dados para um sistema de apoio a uma academia popular voltada ao público idoso.
 
+## Sobre o Projeto
+O **NÚCLEOS CARIOCAS** é um projeto da Secretaria Municipal de Assistência Social do Rio de Janeiro, que visa promover a inserção social em áreas de vulnerabilidade.
+Atualmente, são mais de 75 núcleos em toda a cidade, cujas atividades beneficiam crianças, adolescentes, adultos e idosos. 
+Cada núcleo oferece atividades de cultura, esporte e lazer, com o objetivo de aumentar a autoestima e a autonomia dos participantes.
+As atividades são desenvolvidas de acordo com as necessidades locais e são realizadas em parceria com os Centros de Referência em Assistência Social (CRAS), que encaminham os usuários às atividades.
+Para esse projeto, estamos atuando na academia popular, realizada na Associação de Moradores de Oswaldo Cruz.
+O responsável pelo projeto em Oswaldo Cruz é o Segio Corrêa, professor de Educação Física e quem ministra as aulas.
+
+
 ## Objetivo
-O objetivo principal deste trabalho não é resolver todos os problemas levantados nas entrevistas, mas sim, começar a propor soluções, através da criação de um banco de dados, que poderá servir para uma futura implementação de uma interface gráfica em um aplicativo de celular.<br>
-Através de entrevistas realizadas ao longo do ano passado e deste ano, começaremos a definir os requisitos que o sistema precisa ter, bem como as regras de negócio que precisamos ter.<br>
-Os alunos desse projeto também foram bem receptivos e animados com a ideia de um aplicativo para a academia.
+Esse trabalho é a continuação do tema integrador anterior. Através de ferramentas, como o MariaDB e o Flask, irei, com a orientação da professora Denise, criar uma aplicação web para registro e controle de dados dos alunos e professores do projeto Núcleos Cariocas.<br>
+Começamos o projeto com a criação de um banco de dados, que se conectará ao html através do python. Utilizando também a interface de rotas do Flask, a aplicação permite cadastro, alteração, exclusão e busca no banco da dados criados.<br>
+O foco é que todo o sistema funcione, com o mínimo de erros possível. O design ainda está um pouco “cru”, mas espero melhora-lo em próximas versões.
+
 
 ## ODS 17 — Parcerias e Meios de Implementação
 Essa ODS fala sobre:
