@@ -22,3 +22,5 @@
 **RN11**: Os dados pessoais dos alunos devem ser acessíveis apenas pelo próprio aluno e pelo professor responsável.
 
 **RN12**: O sistema deve manter histórico das presenças mesmo após alterações cadastrais.
+
+**RN13**: Todos os professores devem possuir obrigatoriamente CREF.
