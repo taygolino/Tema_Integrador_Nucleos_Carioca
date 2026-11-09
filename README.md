@@ -2,11 +2,11 @@
 Trabalho de extensão do curso de Ciência da Computação (EAD), com foco na documentação, modelagem e implementação básica de um banco de dados para um sistema de apoio a uma academia popular voltada ao público idoso.
 
 ## Sobre o Projeto
-O **NÚCLEOS CARIOCAS** é um projeto da Secretaria Municipal de Assistência Social do Rio de Janeiro, que visa promover a inserção social em áreas de vulnerabilidade.
-Atualmente, são mais de 75 núcleos em toda a cidade, cujas atividades beneficiam crianças, adolescentes, adultos e idosos. 
-Cada núcleo oferece atividades de cultura, esporte e lazer, com o objetivo de aumentar a autoestima e a autonomia dos participantes.
-As atividades são desenvolvidas de acordo com as necessidades locais e são realizadas em parceria com os Centros de Referência em Assistência Social (CRAS), que encaminham os usuários às atividades.
-Para esse projeto, estamos atuando na academia popular, realizada na Associação de Moradores de Oswaldo Cruz.
+O **NÚCLEOS CARIOCAS** é um projeto da Secretaria Municipal de Assistência Social do Rio de Janeiro, que visa promover a inserção social em áreas de vulnerabilidade.<br>
+Atualmente, são mais de 75 núcleos em toda a cidade, cujas atividades beneficiam crianças, adolescentes, adultos e idosos.<br>
+Cada núcleo oferece atividades de cultura, esporte e lazer, com o objetivo de aumentar a autoestima e a autonomia dos participantes.<br>
+As atividades são desenvolvidas de acordo com as necessidades locais e são realizadas em parceria com os Centros de Referência em Assistência Social (CRAS), que encaminham os usuários às atividades.<br>
+Para esse projeto, estamos atuando na academia popular, realizada na Associação de Moradores de Oswaldo Cruz.<br>
 O responsável pelo projeto em Oswaldo Cruz é o Segio Corrêa, professor de Educação Física e quem ministra as aulas.
 
 
@@ -29,7 +29,12 @@ Além disso, o sistema proposto contribui para facilitar a comunicação entre p
 
 ## Estrutura do repositório
 - `docs/`: documentação do projeto, requisitos, regras de negócio e diagramas.
-- `database/`: scripts SQL para criação do banco, criação das tabelas, inserção de dados e exemplos de CRUD.
+- `database/`: Banco de dados do projeto. Foi usado o MariaDB nesse projeto.
+- `models/`: Onde ficam as Classes em Python.
+- `repositories`: Onde ficam os códigos do CRUD, para deixa-los separados e organizados.
+- `templates`: As folhas de html do Flask ficam aqui.
+- `static`: As folhas de estilo do Flask ficam aqui.
+- `superados`: Os arquivos antigos ficam aqui, apenas para manter o histórico.
 
 ## Tecnologias e ferramentas
 - MariaDB
@@ -45,12 +50,15 @@ Além disso, o sistema proposto contribui para facilitar a comunicação entre p
 - ClaudeIA
 
 
-## Scripts do banco de dados
-Execute os arquivos da pasta `database/` na seguinte ordem:
-1. `01_create_db.sql`
-2. `02_create_tables.sql`
-3. `03_insert_dados.sql`
-4. `04_crud.sql`
+## Próximos passos
+Próximas funcionalidades a serem implementadas:
+1. Login e controle de usuários;
+2. Tratamento de senhas usando hash;
+3. Formatação dos campos de cpf, cref, telefone;
+4. Adicionar seletores em campos que precisam existir no DB, para auxiliar o preenchimento;
+5. Melhorias de acessibilidade e responsividade;
+6. Relatórios de frequência e participação.
+
 
 ## Autor
 Fabiano H. Carminatti Jr
