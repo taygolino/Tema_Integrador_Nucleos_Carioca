@@ -34,10 +34,16 @@ Além disso, o sistema proposto contribui para facilitar a comunicação entre p
 ## Tecnologias e ferramentas
 - MariaDB
 - SQL
-- DBeaver
+- HeidiSQL
 - Draw.io
 - Lucid.app
 - GitHub
+- Python 3.15.2
+- Visual Studio Code
+- Flask
+- ChatGPT
+- ClaudeIA
+
 
 ## Scripts do banco de dados
 Execute os arquivos da pasta `database/` na seguinte ordem:
@@ -48,3 +54,6 @@ Execute os arquivos da pasta `database/` na seguinte ordem:
 
 ## Autor
 Fabiano H. Carminatti Jr
+
+## Profª Orientadora
+Denise Moraes
